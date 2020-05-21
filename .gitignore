@@ -10,6 +10,9 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
+Unity Project - Fantasy Game/[Ll]ibrary/
+Unity Project - Fantasy Game/[Tt]emp/
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
