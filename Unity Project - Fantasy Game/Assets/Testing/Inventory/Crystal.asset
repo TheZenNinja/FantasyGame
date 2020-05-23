@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5e7c9965a2eaf64fb5d8bf0c7d943c0, type: 3}
   m_Name: Crystal
   m_EditorClassIdentifier: 
-  type: 0
-  itemName: New Item
+  type: 7
+  itemName: Fire Crystal
   discription: I wonder what this could be?
   rarity: 0
-  type: 7
+  sprite: {fileID: -8123387816349118897, guid: 4c3fbad31b353f0459de449dc7aa93af, type: 3}
   element: 0
   lines: []

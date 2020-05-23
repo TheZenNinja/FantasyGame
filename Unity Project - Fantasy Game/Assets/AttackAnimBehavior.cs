@@ -16,29 +16,38 @@ public class AttackAnimBehavior : StateMachineBehaviour
         public float time;
         public bool cancelEntityGravity;
     }
-    private string[] attackNames = { "Normal Attack", "Light Attack", "Heavy Attack", "Dash Attack", "Normal Attack", "Lift Attack", "Can Interrupt" };
+    [System.Serializable]
+    public class AnimHoldInput
+    {
+        
+    }
+    private string[] attackNames = { "Normal Attack", "Light Attack", "Heavy Attack", "Dash Attack", "Normal Attack", "Lift Attack" };
 
     [Header("General Stuff")]
 
     public int nextComboIndex;
+    public bool resetCombo;
 
-    public float[] attackPoints;
+    [Space]
+    [Header("Hold Input")]
+    public bool useHoldInput;
+    public KeyCode holdInput = KeyCode.Mouse0;
+    public bool changeMoveVector;
+    [Tooltip("x, y, z, duration")]
+    public Vector4 moveVector;
+
+    [Space]
     [Header("Effects")]
     [SerializeField] private Effect[] effects;
-    public float trailStart;
-    public float trailStop = 1;
+
     [Header("Sounds")]
     [SerializeField] Effect[] sounds;
-    [Header("Movement")]
-    public bool stopMovement = false;
-    public bool cancelGrav = false;
-    public bool moveTowardsTarget = true;
-    public float hoverTime = 0.25f;
 
+    [Header("Movement")]
     public Vector3 velocity;
-    public float velStart, velEnd;
+    public int frames = 10;
+
     [Header("Attack Types")]
-    public float effectActivationTime;
     public bool breaker = false;
     public bool drag = false;
     public bool launch = false;
@@ -58,8 +67,9 @@ public class AttackAnimBehavior : StateMachineBehaviour
         if (breaker)
             Attacking.instance.isLiftingAttack = true;
 
-        Attacking.instance.CanInterrupt = false;
-
+        Attacking.instance.CanAttack = false;
+        Attacking.instance.attackMove = velocity;
+        Attacking.instance.moveDuration = (float)frames / 60;
 
         //if (stopMovement)
         //  Attacking.instance.move.CancelMovement(true);

@@ -27,17 +27,15 @@ public class Attacking : MonoBehaviour
     public bool isLiftingAttack;
 
     private bool _ci;
-    public bool CanInterrupt
+    public bool CanAttack
     {
         get { return _ci; }
         set
         {
             _ci = value;
-            anim.SetBool("Can Interrupt", value);
+            anim.SetBool("Can Attack", value);
         }
     }
-
-    public bool canAttack = true;
 
     #region Dodgeing
     public bool invulnerable;
@@ -50,8 +48,14 @@ public class Attacking : MonoBehaviour
 
     public WeaponBehavior weapon;
 
+    public Vector3 attackMove;
+    public float moveDuration;
+
     [Header("Target Acc")]
     public EntityFinder fov;
+
+    
+
     public Transform cam;
     public Transform forwardRef;
     public List<Entity> entities;
@@ -67,7 +71,7 @@ public class Attacking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canAttack || CanInterrupt)
+        if (CanAttack)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
@@ -113,9 +117,6 @@ public class Attacking : MonoBehaviour
 
     private void ChooseAttack(bool isHeavy)
     {
-        anim.SetTrigger("Interrupt");
-        anim.SetBool("Can Interrupt", true);
-
         if (Input.GetKey(KeyCode.LeftShift))
         {
             anim.SetBool("Dash Attack", true);
@@ -163,7 +164,16 @@ public class Attacking : MonoBehaviour
         //StartCoroutine(LaunchEntitiy(force, duration));
     }
 
-    //public void 
+    public void StartMove()
+    {
+        move.AttackMove(attackMove, moveDuration);
+    }
+
+    public void StopMove()
+    {
+        move.StopAttackMove();
+    }
+
     #endregion
 
     public void Hit()

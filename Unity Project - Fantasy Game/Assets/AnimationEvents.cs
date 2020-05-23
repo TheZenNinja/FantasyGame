@@ -38,7 +38,7 @@ public class AnimationEvents : MonoBehaviour
     }
     public void AllowInterrupt()
     {
-        Attacking.instance.CanInterrupt = true;
+        Attacking.instance.CanAttack = true;
     }
     public void Launch(Vector3 dir)
     {
@@ -46,5 +46,19 @@ public class AnimationEvents : MonoBehaviour
             dir = Vector3.up;
 
         Attacking.instance.LaunchTarget(dir);
+    }
+    public void StartMove()
+    {
+        Attacking.instance.StartMove();
+    }
+    public void StopMove()
+    {
+        Attacking.instance.StopMove();
+    }
+
+    //0 = m1, 1 = m2
+    public void TestHoldInput(int index)
+    {
+        
     }
 }

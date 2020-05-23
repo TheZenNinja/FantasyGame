@@ -14,6 +14,7 @@ public class CCMovement : MonoBehaviour
 
     public bool canMove = true;
     public bool grounded;
+
     [Header("Jumping")]
     public bool canDoubleJump;
     public float jumpForce;
@@ -27,6 +28,7 @@ public class CCMovement : MonoBehaviour
     public ParticleSystem jumpParticle;
     public ParticleSystem doubleJumpParticle;
     [Space]
+    public Vector3 attackMove;
     public bool airCombo;
     public float gravCancelBoost = 1;
     public float grav;
@@ -124,8 +126,14 @@ public class CCMovement : MonoBehaviour
                 doubleJumpParticle.Play();
             }
         }
-        if (airCombo)
-            cc.Move(center.TransformVector(Vector3.ClampMagnitude(velocity,2)) * Time.deltaTime);
+        if (attackMove.magnitude > Mathf.Epsilon)
+        {
+            if (grounded)
+                cc.Move(center.TransformVector(attackMove - Vector3.up * 0.1f) * Time.deltaTime);
+            else
+                cc.Move(center.TransformVector(attackMove) * Time.deltaTime);
+
+        }
         else if (canMove && !jumpCharging)
             cc.Move(center.TransformVector(velocity) * Time.deltaTime);
     }
@@ -157,6 +165,21 @@ public class CCMovement : MonoBehaviour
         velocity.y = (!active && verticalBoost) ? gravCancelBoost : 0;
     }
 
+    public void AttackMove(Vector3 dir, float duration)
+    {
+        StartCoroutine(AttackMoveTimer(dir, duration));
+    }
+    private IEnumerator AttackMoveTimer(Vector3 dir, float dur)
+    {
+        attackMove += dir;
+        yield return new WaitForSeconds(dur);
+        attackMove -= dir;
+    }
+
+    public void StopAttackMove()
+    {
+        attackMove = Vector3.zero;
+    }
 
     private void OnDrawGizmos()
     {

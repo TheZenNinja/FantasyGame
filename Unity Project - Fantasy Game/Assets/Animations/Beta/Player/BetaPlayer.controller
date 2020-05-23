@@ -100,19 +100,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextComboIndex: 0
-  attackPoints: []
+  resetCombo: 0
+  useHoldInput: 0
+  holdInput: 323
+  changeMoveVector: 0
+  moveVector: {x: 0, y: 0, z: 0, w: 0}
   effects: []
-  trailStart: 0.3
-  trailStop: 0.4
   sounds: []
-  stopMovement: 1
-  cancelGrav: 0
-  moveTowardsTarget: 1
-  hoverTime: 0.25
-  velocity: {x: 0, y: 0, z: 0}
-  velStart: 0
-  velEnd: 0
-  effectActivationTime: 0
+  velocity: {x: 0, y: 0, z: 5}
+  frames: 10
   breaker: 0
   drag: 0
   launch: 0
@@ -130,19 +126,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextComboIndex: 0
-  attackPoints: []
+  resetCombo: 0
+  useHoldInput: 1
+  holdInput: 323
+  changeMoveVector: 1
+  moveVector: {x: 0, y: 10, z: 0, w: 20}
   effects: []
-  trailStart: 0.11
-  trailStop: 0.21
   sounds: []
-  stopMovement: 1
-  cancelGrav: 0
-  moveTowardsTarget: 0
-  hoverTime: 0
-  velocity: {x: 0, y: 0, z: 0}
-  velStart: 0
-  velEnd: 0
-  effectActivationTime: 0.15
+  velocity: {x: 0, y: 0, z: 1}
+  frames: 10
   breaker: 0
   drag: 0
   launch: 1
@@ -208,7 +200,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 952f48623eda8d9439c123b8a81c127a, type: 2}
+  m_Motion: {fileID: 7400000, guid: 97675ab2b8112454bb2bb051089b2668, type: 2}
   m_Tag: attack
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -368,12 +360,12 @@ AnimatorStateMachine:
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: -8383555788427800650}
-    second:
-    - {fileID: -5706028545611266559}
   - first: {fileID: 6596595190479311935}
     second:
     - {fileID: -654730948168176924}
+  - first: {fileID: -8383555788427800650}
+    second:
+    - {fileID: -5706028545611266559}
   m_StateMachineBehaviours:
   - {fileID: -3762271013888666135}
   m_AnyStatePosition: {x: 530, y: 60, z: 0}
@@ -403,7 +395,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 81341d898ca99c2449fa89de2c6c8d15, type: 2}
+  m_Motion: {fileID: 7400000, guid: 23e89dc783ff01c4096b50174326e3f5, type: 2}
   m_Tag: attack
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -447,19 +439,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextComboIndex: 2
-  attackPoints: []
+  resetCombo: 0
+  useHoldInput: 0
+  holdInput: 323
+  changeMoveVector: 0
+  moveVector: {x: 0, y: 0, z: 0, w: 0}
   effects: []
-  trailStart: 0.1
-  trailStop: 0.22
   sounds: []
-  stopMovement: 1
-  cancelGrav: 1
-  moveTowardsTarget: 1
-  hoverTime: 0.25
-  velocity: {x: 0, y: 0, z: 0}
-  velStart: 0
-  velEnd: 0
-  effectActivationTime: 0
+  velocity: {x: 0, y: 0, z: 2}
+  frames: 10
   breaker: 0
   drag: 0
   launch: 0
@@ -477,21 +465,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextComboIndex: 0
-  attackPoints: []
+  resetCombo: 0
+  useHoldInput: 0
+  holdInput: 323
+  changeMoveVector: 0
+  moveVector: {x: 0, y: 0, z: 0, w: 0}
   effects:
   - index: 0
     time: 0.2
-  trailStart: 0.2
-  trailStop: 0.45
   sounds: []
-  stopMovement: 0
-  cancelGrav: 0
-  moveTowardsTarget: 1
-  hoverTime: 0
   velocity: {x: 0, y: 0, z: 30}
-  velStart: 0.2
-  velEnd: 0.45
-  effectActivationTime: 0
+  frames: 10
   breaker: 1
   drag: 0
   launch: 0
@@ -969,7 +953,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: cc2100a5d40ba8b40a27d2669a87c5fa, type: 2}
+  m_Motion: {fileID: 7400000, guid: 858cf94684d2b0f44966adf332ab0ee3, type: 2}
   m_Tag: attack
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -988,21 +972,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextComboIndex: 1
-  attackPoints: []
+  resetCombo: 0
+  useHoldInput: 0
+  holdInput: 323
+  changeMoveVector: 0
+  moveVector: {x: 0, y: 0, z: 0, w: 0}
   effects: []
-  trailStart: 0.1
-  trailStop: 0.2
   sounds:
   - index: 0
     time: 0.13
-  stopMovement: 1
-  cancelGrav: 0
-  moveTowardsTarget: 1
-  hoverTime: 0.15
   velocity: {x: 0, y: 0, z: 0}
-  velStart: 0
-  velEnd: 0
-  effectActivationTime: 0
+  frames: 10
   breaker: 0
   drag: 0
   launch: 0
@@ -1201,21 +1181,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextComboIndex: 1
-  attackPoints: []
+  resetCombo: 0
+  useHoldInput: 0
+  holdInput: 323
+  changeMoveVector: 0
+  moveVector: {x: 0, y: 0, z: 0, w: 0}
   effects: []
-  trailStart: 0.1
-  trailStop: 0.2
   sounds:
   - index: 0
     time: 0.13
-  stopMovement: 1
-  cancelGrav: 0
-  moveTowardsTarget: 1
-  hoverTime: 0.15
-  velocity: {x: 0, y: 0, z: 0}
-  velStart: 0
-  velEnd: 0
-  effectActivationTime: 0
+  velocity: {x: 0, y: 0, z: 5}
+  frames: 10
   breaker: 0
   drag: 0
   launch: 0
@@ -1233,19 +1209,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextComboIndex: 3
-  attackPoints: []
+  resetCombo: 0
+  useHoldInput: 0
+  holdInput: 323
+  changeMoveVector: 0
+  moveVector: {x: 0, y: 0, z: 0, w: 0}
   effects: []
-  trailStart: 0.15
-  trailStop: 0.3
   sounds: []
-  stopMovement: 1
-  cancelGrav: 0
-  moveTowardsTarget: 1
-  hoverTime: 0.15
-  velocity: {x: 0, y: 0, z: 0}
-  velStart: 0
-  velEnd: 0
-  effectActivationTime: 0
+  velocity: {x: 0, y: 0, z: 5}
+  frames: 15
   breaker: 0
   drag: 0
   launch: 0
@@ -1263,19 +1235,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextComboIndex: 0
-  attackPoints: []
+  resetCombo: 0
+  useHoldInput: 0
+  holdInput: 323
+  changeMoveVector: 0
+  moveVector: {x: 0, y: 0, z: 0, w: 0}
   effects: []
-  trailStart: 0.15
-  trailStop: 0.3
   sounds: []
-  stopMovement: 1
-  cancelGrav: 0
-  moveTowardsTarget: 1
-  hoverTime: 0.15
   velocity: {x: 0, y: 0, z: 0}
-  velStart: 0
-  velEnd: 0
-  effectActivationTime: 0
+  frames: 10
   breaker: 0
   drag: 0
   launch: 0
@@ -1458,21 +1426,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextComboIndex: 0
-  attackPoints: []
+  resetCombo: 0
+  useHoldInput: 0
+  holdInput: 323
+  changeMoveVector: 0
+  moveVector: {x: 0, y: 0, z: 0, w: 0}
   effects:
   - index: 0
     time: 0.2
-  trailStart: 0.2
-  trailStop: 0.45
   sounds: []
-  stopMovement: 0
-  cancelGrav: 0
-  moveTowardsTarget: 1
-  hoverTime: 0
   velocity: {x: 0, y: 0, z: 30}
-  velStart: 0.2
-  velEnd: 0.45
-  effectActivationTime: 0
+  frames: 20
   breaker: 1
   drag: 0
   launch: 0
@@ -1691,19 +1655,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextComboIndex: 2
-  attackPoints: []
+  resetCombo: 0
+  useHoldInput: 0
+  holdInput: 323
+  changeMoveVector: 0
+  moveVector: {x: 0, y: 0, z: 0, w: 0}
   effects: []
-  trailStart: 0.1
-  trailStop: 0.22
   sounds: []
-  stopMovement: 1
-  cancelGrav: 0
-  moveTowardsTarget: 1
-  hoverTime: 0.15
   velocity: {x: 0, y: 0, z: 0}
-  velStart: 0
-  velEnd: 0
-  effectActivationTime: 0
+  frames: 10
   breaker: 0
   drag: 0
   launch: 0
@@ -1822,7 +1782,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Can Interrupt
+  - m_Name: Can Attack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -2070,7 +2030,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 858cf94684d2b0f44966adf332ab0ee3, type: 2}
+  m_Motion: {fileID: 7400000, guid: f01e33dcabe9bc94181ce9ed7cbab4f3, type: 2}
   m_Tag: attack
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -2206,12 +2166,6 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -2100876562563779687}
     m_Position: {x: 620, y: 320, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 4426241262137564816}
-    m_Position: {x: 655, y: 385, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 8253517273491142746}
-    m_Position: {x: 690, y: 450, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -8839639682795471136}
@@ -2543,7 +2497,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: cc2100a5d40ba8b40a27d2669a87c5fa, type: 2}
+  m_Motion: {fileID: 7400000, guid: 375f7b94c28a7af4a8b9b5e3aa54a708, type: 2}
   m_Tag: attack
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -2562,19 +2516,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextComboIndex: 0
-  attackPoints: []
+  resetCombo: 0
+  useHoldInput: 0
+  holdInput: 323
+  changeMoveVector: 0
+  moveVector: {x: 0, y: 0, z: 0, w: 0}
   effects: []
-  trailStart: 0.11
-  trailStop: 0.21
   sounds: []
-  stopMovement: 1
-  cancelGrav: 0
-  moveTowardsTarget: 0
-  hoverTime: 0
   velocity: {x: 0, y: 0, z: 0}
-  velStart: 0
-  velEnd: 0
-  effectActivationTime: 0.15
+  frames: 10
   breaker: 0
   drag: 0
   launch: 1
@@ -2614,19 +2564,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextComboIndex: 0
-  attackPoints: []
+  resetCombo: 0
+  useHoldInput: 0
+  holdInput: 323
+  changeMoveVector: 0
+  moveVector: {x: 0, y: 0, z: 0, w: 0}
   effects: []
-  trailStart: 0.11
-  trailStop: 0.24
   sounds: []
-  stopMovement: 1
-  cancelGrav: 1
-  moveTowardsTarget: 1
-  hoverTime: 0.25
-  velocity: {x: 0, y: 10, z: 0}
-  velStart: 0.11
-  velEnd: 0.31
-  effectActivationTime: 0
+  velocity: {x: 0, y: 10, z: 2}
+  frames: 10
   breaker: 0
   drag: 0
   launch: 0
@@ -2722,32 +2668,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &4426241262137564816
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 4
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 81341d898ca99c2449fa89de2c6c8d15, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!114 &4474459455642003957
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2761,19 +2681,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextComboIndex: 4
-  attackPoints: []
+  resetCombo: 0
+  useHoldInput: 0
+  holdInput: 323
+  changeMoveVector: 0
+  moveVector: {x: 0, y: 0, z: 0, w: 0}
   effects: []
-  trailStart: 0.2
-  trailStop: 0.35
   sounds: []
-  stopMovement: 1
-  cancelGrav: 0
-  moveTowardsTarget: 1
-  hoverTime: 0.25
-  velocity: {x: 0, y: 0, z: 0}
-  velStart: 0
-  velEnd: 0
-  effectActivationTime: 0
+  velocity: {x: 0, y: 0, z: 5}
+  frames: 15
   breaker: 0
   drag: 0
   launch: 0
@@ -2816,19 +2732,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextComboIndex: 2
-  attackPoints: []
+  resetCombo: 0
+  useHoldInput: 0
+  holdInput: 323
+  changeMoveVector: 0
+  moveVector: {x: 0, y: 0, z: 0, w: 0}
   effects: []
-  trailStart: 0.1
-  trailStop: 0.22
   sounds: []
-  stopMovement: 1
-  cancelGrav: 0
-  moveTowardsTarget: 1
-  hoverTime: 0.15
-  velocity: {x: 0, y: 0, z: 0}
-  velStart: 0
-  velEnd: 0
-  effectActivationTime: 0
+  velocity: {x: 0, y: 0, z: 5}
+  frames: 10
   breaker: 0
   drag: 0
   launch: 0
@@ -3058,19 +2970,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextComboIndex: 1
-  attackPoints: []
+  resetCombo: 0
+  useHoldInput: 0
+  holdInput: 323
+  changeMoveVector: 0
+  moveVector: {x: 0, y: 0, z: 0, w: 0}
   effects: []
-  trailStart: 0.15
-  trailStop: 0.25
   sounds: []
-  stopMovement: 1
-  cancelGrav: 1
-  moveTowardsTarget: 1
-  hoverTime: 0.25
-  velocity: {x: 0, y: 0, z: 0}
-  velStart: 0
-  velEnd: 0
-  effectActivationTime: 0
+  velocity: {x: 0, y: 0, z: 2}
+  frames: 10
   breaker: 0
   drag: 0
   launch: 0
@@ -3226,7 +3134,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8f3836e5752eb394892a0bd9fc363e87, type: 2}
+  m_Motion: {fileID: 7400000, guid: 45fa885040953fa47b23171512f380cb, type: 2}
   m_Tag: attack
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -3246,32 +3154,6 @@ AnimatorTransition:
   m_Mute: 0
   m_IsExit: 1
   serializedVersion: 1
---- !u!1102 &8253517273491142746
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 5
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 858cf94684d2b0f44966adf332ab0ee3, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1101 &8316994558673813897
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

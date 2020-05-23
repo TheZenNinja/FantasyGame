@@ -86,7 +86,7 @@ public enum ItemType
 
 public static class ElementalFunctions
 {
-    private static float matchupModifier = 0.25f;
+    private static readonly float matchupModifier = 0.25f;
 
     public static float GetElementMatchupMulti(Element attackingElement, Element targetElement)
     {

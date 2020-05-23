@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(menuName = "Items/Basic")]
 public class Item : ScriptableObject
@@ -11,7 +12,7 @@ public class Item : ScriptableObject
     [TextArea(3,100)]
     public string discription = "I wonder what this could be?";
     public Rarity rarity = Rarity.Common;
-
+    public Sprite sprite;
 
     #region Get Color
     public Color GetColor()

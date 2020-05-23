@@ -46,6 +46,4 @@ public class WeaponItem : Item
     public HandleItem handle;
     public CoreItem core;
     public WeaponPart other;
-
-    [SerializeField]
 }

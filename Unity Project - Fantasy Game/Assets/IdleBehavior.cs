@@ -8,6 +8,7 @@ public class IdleBehavior : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Attacking.instance.move.ToggleGrav(true);
+        Attacking.instance.CanAttack = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258ca30ebfe92bc45b7769779b000aa3, type: 3}
   m_Name: Core
   m_EditorClassIdentifier: 
-  type: 0
+  type: 6
   itemName: Core
   discription: I wonder what this could be?
   rarity: 0
-  type: 6
   crystal: {fileID: 11400000, guid: 7f9add88e8300354498d45b8ebf1688e, type: 2}
   harness: 0
   foci: []
