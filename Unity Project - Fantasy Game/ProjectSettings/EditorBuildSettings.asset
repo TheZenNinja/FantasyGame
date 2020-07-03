@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Testing/Main Menu/Main Menu.unity
+    guid: d53a509a7a1a6b947b3e659ee1c49006
+  - enabled: 1
+    path: Assets/Testing/Inventory/Inventory Testing.unity
+    guid: a66d55582d3f057439034f82b5477a85
   m_configObjects: {}

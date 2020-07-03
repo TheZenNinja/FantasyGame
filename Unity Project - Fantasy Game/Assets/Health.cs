@@ -1,80 +1,155 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
+using TMPro;
 
-public class Health : MonoBehaviour
+public enum Faction
 {
+    none,
+    player,
+    enemy
+}
+public class Health : MonoBehaviour, IDamagableObject
+{
+    public Faction faction;
     public int currentHp;
-    private int maxHp = 10;
-    public float hpPercent = 1;
+    [SerializeField] int maxHp = 10;
+    public int currentShield;
+    [SerializeField] int maxShield = 10;
+
+    public float shieldRechargeDelay = 2;
+    private float shieldDelayTimer = 0;
+
+    public int regenPerSecond = 2;
+    private float regenTimer;
 
     public bool useHealthbar;
-    public RectTransform hpBar, bgBar;
-    public float bgPercent = 1;
-    public bool bgPaused;
-    public bool bgMoving;
-    public float bgDelay = 1;
-    public float bgSpeed = 2;
+    public Slider hpBar;
+    public Slider shieldBar;
 
-    private float barSize;
+    public bool useText;
+    public TextMeshProUGUI shieldTxt;
+    public TextMeshProUGUI healthTxt;
 
-    void Start()
+    public Action<int> Hurt;
+    public Action Die;
+
+    private EntityStatus status;
+
+    private void Start()
     {
+        status = GetComponent<EntityStatus>();
+
         currentHp = maxHp;
-        barSize = hpBar.sizeDelta.x;
-    }
-
-    private void Update()
-    {
-        if (!bgPaused)
-        {
-            if (Mathf.Abs(hpPercent - bgPercent) > 0.01f)
-            {
-                bgMoving = true;
-
-                bgPercent = Mathf.Lerp(bgPercent, hpPercent, Time.deltaTime * bgSpeed);
-
-                bgBar.sizeDelta = new Vector2((bgPercent - 0.01f) * barSize, bgBar.sizeDelta.y);
-            }
-            else
-                bgPercent = hpPercent;
-        }
-        else
-            bgMoving = false;
-    }
-
-    public void TakeDamage(float dmg)
-    {
-        TakeDamage(Mathf.RoundToInt(dmg));
-    }
-
-    public void TakeDamage(int dmg = 1)
-    {
-        currentHp -= 1;
-
-        if (currentHp <= 0)
-            currentHp = 0;
-
-        hpPercent = (float)currentHp / maxHp;
+        currentShield = maxShield;
 
         if (useHealthbar)
         {
-            hpBar.sizeDelta = new Vector2(hpPercent * barSize, hpBar.sizeDelta.y);
-
-            if (!bgPaused)
+            hpBar.value = 1;
+            shieldBar.value = 1;
+        }
+        if (useText)
+        {
+            shieldTxt.text = currentShield + "/" + maxShield;
+            healthTxt.text = currentHp + "/" + maxHp;
+        }
+    }
+    private void Update()
+    {
+        if (currentShield < maxShield)
+        {
+            if (shieldDelayTimer > 0)
+                shieldDelayTimer -= Time.deltaTime;
+            else
             {
-                if (!bgMoving)
-                StartCoroutine(bgPauseTimer(bgDelay));
-                else
-                StartCoroutine(bgPauseTimer(0.1f));
+                regenTimer += Time.deltaTime * regenPerSecond;
+                if (regenTimer >= 1)
+                {
+                    currentShield++;
+                    UpdateUI();
+                    regenTimer = 0;
+                }
+                
             }
         }
     }
-
-    IEnumerator bgPauseTimer(float delay)
+    public void DamageObj(int dmg, EntityStatus sender)
     {
-        bgPaused = true;
-        yield return new WaitForSeconds(delay);
-        bgPaused = false;
+        if (status.invuln)
+        {
+            Debug.Log(gameObject.name + " Dodged");
+            return;
+        }
+        else if (status.parry)
+        {
+            if (sender != null)
+                sender.GetComponent<Health>().DamageObj(dmg, GetComponent<EntityStatus>());
+
+            FindObjectOfType<FirstPersonRigTest>().ResetParry();
+
+            Debug.Log(gameObject.name + " Parried");
+
+            return;
+        }
+        else if (status.block)
+        {
+            dmg = Mathf.RoundToInt((float)dmg / 4);
+            Debug.Log(gameObject.name + " Blocked");
+        }
+        else
+            Debug.Log(gameObject.name + " was hit");
+
+        if (currentShield > 0)
+        {
+            currentShield -= dmg;
+            if (currentShield <= 0)
+                currentShield = 0;
+
+            Hurt?.Invoke(dmg);
+        }
+        else
+        {
+            currentHp -= dmg;
+            if (currentHp <= 0)
+                currentHp = 0;
+
+
+            Hurt?.Invoke(dmg);
+
+        }
+        UpdateUI();
+
+        shieldDelayTimer = shieldRechargeDelay;
+
+        if (currentHp <= 0)
+            Die?.Invoke();
+    }
+    public bool Heal(int amt = 1)
+    {
+        if (currentHp >= maxHp)
+            return false;
+
+        currentHp += amt;
+        if (currentHp > maxHp)
+            currentHp = maxHp;
+
+        UpdateUI();
+            return true;
+    }
+
+    private void UpdateUI()
+    {
+        if (useHealthbar)
+        {
+            shieldBar.value = (float)currentShield / maxShield;
+            hpBar.value = (float)currentHp / maxHp;
+        }
+        if (useText)
+        {
+            shieldTxt.text = currentShield + "/" + maxShield;
+            healthTxt.text = currentHp + "/" + maxHp;
+        }
     }
 }

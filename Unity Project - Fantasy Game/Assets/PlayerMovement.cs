@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
     public float countdownTimer = 1;
 
     public CameraMovement camMovement;
-
     [Space]
     public float grav = 1;
 

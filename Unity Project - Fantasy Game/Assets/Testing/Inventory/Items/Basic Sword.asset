@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46438b59379bd31498359b833bb40824, type: 3}
+  m_Name: Basic Sword
+  m_EditorClassIdentifier: 
+  staticInstance: 0
+  ID: 0
+  itemName: Copper Single Sword
+  description: 'Weapon Type: Single Sword
+
+    Material: Copper
+
+    Damage: 10'
+  rarity: 0
+  sprite: {fileID: 21300000, guid: 8936bcfd96e7b694796f39f0c7d8a2c8, type: 3}
+  stackable: 0
+  equipmentType: 2
+  weaponType: 1
+  parts:
+  - name: Wood Handle
+    type: 4
+    subType: 0
+    material: 1
+    quality: 0
+  - name: Copper Guard
+    type: 5
+    subType: 0
+    material: 4
+    quality: 0
+  - name: Copper Blade
+    type: 7
+    subType: 0
+    material: 4
+    quality: 0
+  itemTier: 0
+  swingRange: 0
+  attackDmg: 10
+  canDisassemble: 0

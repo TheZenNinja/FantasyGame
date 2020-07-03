@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 
 public class IKTesting : MonoBehaviour
 {
@@ -73,7 +73,7 @@ public class IKTesting : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        Transform current = transform;
+        /*Transform current = transform;
         for (int i = 0; i < chainLength && current != null && current.parent != null; i++)
         {
             var scale = Vector3.Distance(current.position, current.parent.position) * 0.1f;
@@ -82,6 +82,6 @@ public class IKTesting : MonoBehaviour
             Handles.color = Color.green;
             Handles.DrawWireCube(Vector3.up * 0.5f, Vector3.one);
             current = current.parent;
-        }
+        }*/
     }
 }

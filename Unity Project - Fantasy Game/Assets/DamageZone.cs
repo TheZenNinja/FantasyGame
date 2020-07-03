@@ -8,9 +8,9 @@ public class DamageZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Health>())
+        if (other.GetComponent<IDamagableObject>() != null)
         {
-            other.GetComponent<Health>().TakeDamage(damage);
+            other.GetComponent<IDamagableObject>().DamageObj(damage, null);
         }
     }
 }

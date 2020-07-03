@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7859956b98d42eb41bf36b90aaf39b4f, type: 3}
+  m_Name: Item Sprite Atlas
+  m_EditorClassIdentifier: 
+  ingot: {fileID: 21300000, guid: 74dd6f6bbf49e8647b946d256adec3ca, type: 3}
+  ore: {fileID: 21300000, guid: 0ec7e442d637bb04683643d13a8347d6, type: 3}
+  wood: {fileID: 21300000, guid: 7b4f62bbc9d36fc45ba97912010d8eef, type: 3}
+  stone: {fileID: 21300000, guid: 8e3577213aa8e0c4abb54e31f81bc8f0, type: 3}
+  parts:
+  - {fileID: 21300000, guid: 39c2d0109c0a921479a0511c662ff7c4, type: 3}
+  - {fileID: 21300000, guid: aefa1e9e8e2d0e445aa09bd135e7f9dd, type: 3}
+  - {fileID: 21300000, guid: 6260f5e754ad1e74ba83e8244496dfd1, type: 3}
+  - {fileID: 21300000, guid: 837e44b603ded37489805e3011de2d4a, type: 3}
+  - {fileID: 21300000, guid: 88c858bde0f4f8345818199bf0beb372, type: 3}
+  - {fileID: 21300000, guid: 0f94eb1099a99c44d8111fdbad015c12, type: 3}
+  - {fileID: 21300000, guid: 7a04792d469f7b54ba7ca3e31ac93f2e, type: 3}
+  - {fileID: 21300000, guid: 7a04792d469f7b54ba7ca3e31ac93f2e, type: 3}
+  - {fileID: 21300000, guid: 7a04792d469f7b54ba7ca3e31ac93f2e, type: 3}
+  - {fileID: 21300000, guid: 7b4f62bbc9d36fc45ba97912010d8eef, type: 3}
+  - {fileID: 21300000, guid: bcbc63fc953ce9041b4cb30a1f423e26, type: 3}
+  swords:
+  - {fileID: 21300000, guid: 8936bcfd96e7b694796f39f0c7d8a2c8, type: 3}
+  - {fileID: 21300000, guid: b62c86c266b9ceb41aefa76a145039a4, type: 3}
+  - {fileID: 21300000, guid: 077c256e3e71d044b87607ef12e1e5b6, type: 3}
+  - {fileID: 21300000, guid: 8936bcfd96e7b694796f39f0c7d8a2c8, type: 3}
+  axe: {fileID: 21300000, guid: 6260f5e754ad1e74ba83e8244496dfd1, type: 3}
+  pick: {fileID: 21300000, guid: 837e44b603ded37489805e3011de2d4a, type: 3}
+  hammer: {fileID: 21300000, guid: 88c858bde0f4f8345818199bf0beb372, type: 3}
+  gear: {fileID: 21300000, guid: f1f717d11099477408ab239de20c115d, type: 3}

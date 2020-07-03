@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 
 public class EntityFinder : MonoBehaviour
 {
@@ -87,7 +87,7 @@ public class EntityFinder : MonoBehaviour
     {
         return Vector3.Scale(input, new Vector3(1, 0, 1)).normalized;
     }
-    private void OnDrawGizmosSelected()
+    /*private void OnDrawGizmosSelected()
     {
         Handles.color = Color.white;
 
@@ -103,5 +103,5 @@ public class EntityFinder : MonoBehaviour
 
             Handles.DrawWireArc(transform.position, Vector3.up, Vector3.forward, 360, radii[i].viewRadius);
         }
-    }
+    }*/
 }
